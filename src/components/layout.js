@@ -5,7 +5,6 @@ import {
   navivationUl,
   navivationLi,
   navLinkText, 
-  siteTitle,
   topNavigation
 } from './layout.module.css'
 
@@ -23,7 +22,7 @@ const Layout = ({ children }) => {
   return (
     <div className={container}>
       <title>{data.site.siteMetadata.title}</title>
-      <header className={siteTitle}><h1>{data.site.siteMetadata.title}</h1></header>
+      <header><h1>{data.site.siteMetadata.title}</h1></header>
       <nav className={topNavigation}>
         <ul className={navivationUl}>
           <li className={navivationLi}>

@@ -6,7 +6,8 @@ import {
   Homecontainer,
   text,
   title,
-  aboutPicture
+  aboutPicture,
+  form
 } from "../page.module.css"
 
 const AboutPage = ({
@@ -33,6 +34,18 @@ const AboutPage = ({
             }}
           />
         </article>
+      </section>
+      <section className={form}>
+        <form name="contact" method="POST" data-netlify="true">
+          <h2>Contact us</h2>
+          <label>Your Name:</label>
+          <input type="text" name="name" required={true} />
+          <label>Your Email:</label>
+          <input type="email" name="email" required={true} />
+          <label>Message:</label>
+          <textarea name="message" required={true}></textarea>
+          <button type="submit">Send</button>
+        </form>
       </section>
     </Layout>
   )

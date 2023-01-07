@@ -89,3 +89,45 @@
   border-bottom-left-radius: 50%;
   border-top-right-radius: 50%;
 }
+
+/* ---------- Form ---------- */
+
+.form {
+  margin-top: 70px;
+}
+
+.form label {
+  display:block;
+  margin-top: 5px;
+}
+
+.form input, .form textarea {
+    width: 60%;
+    height: 40px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border: none;
+    box-shadow: gray 2px 2px 5px, gray 2px 2px 5px;
+}
+
+.form textarea {
+ min-height: 250px;
+}
+
+.form button {
+  display: block;
+  padding: 10px 20px;
+  margin-right: auto;
+  margin-top: 10px;
+  background-color: white;
+  border: none;
+  box-shadow: gray 2px 2px 5px, gray 2px 2px 5px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.form h2 {
+  font-size: 2rem;
+  line-height: 3rem;
+  text-transform: uppercase;
+}
