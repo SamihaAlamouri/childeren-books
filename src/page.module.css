@@ -1,44 +1,91 @@
+/* ----Home page-----*/
+
+
 .subtitle {
-  font-size: 4rem;
+  font-size: 2rem;
   line-height: 3rem;
-  letter-spacing: -0.2rem;
   text-transform: uppercase;
-  margin: 0;
   margin-bottom: 30px;
+  margin-top: 5%;
 }
 
-.section {
+.featured-container {
   position: relative;
-  margin-top: 180px;
+  margin-top: 150px;
   text-align: center;
 }
 
-.section::before,
-.section::after {
-  position: absolute;
-  display: inline-flex;
-  content: "";
-  background-size: 700px 700px;
-  height: 700px;
-  width: 700px;
-  z-index: -1;
-}
-
-.section::before {
-  top: 40%;
-  left: -40%;
- 
-}
-
-.section::after {
-  top: 0;
-  right: -40%;
-  
-}
-
-.artists {
+.books {
   display: flex;
   justify-content: space-between;
   margin-top: 90px;
   flex-wrap: wrap;
+  gap: 37px;
+}
+
+.Homecontainer {
+  display: flex;
+  margin-top: 40px;
+}
+
+.text {
+  justify-content: center;
+  width: 50vw;
+  transform: translateX(calc((-60vw + 1200px) / 2));
+ 
+}
+.home-picture {
+  width: 50vw;
+  max-height: 450px;
+  transform: translateX(calc((-70vw + 1200px) / 2));
+  border-bottom-left-radius: 50%;
+  border-top-right-radius: 50%;
+
+}
+
+.title {
+  font-size: 3rem;
+  line-height: 3rem;
+  text-transform: uppercase;
+}
+
+.books-list-title{
+  font-size: 2.6rem;
+  line-height: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ------- Book page ---------*/
+
+.book-title {
+  font-size: 3rem;
+  line-height: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  margin-top: 3%;
+}
+
+.book-picture {
+  width:30vw;
+  height: 100%;
+  transform: translateX(calc((-70vw + 1200px) / 2));
+  margin-top: 4%;
+
+}
+.book-details {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #b5cf11;
+}
+
+/* -------- About -----------*/
+
+.about-picture {
+  width:60vw;
+  height: 100%;
+  transform: translateX(calc((-70vw + 1200px) / 2));
+  margin-top: 4%;
+  border-bottom-left-radius: 50%;
+  border-top-right-radius: 50%;
 }

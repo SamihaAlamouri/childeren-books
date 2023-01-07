@@ -4,9 +4,13 @@ import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Book from "../components/book"
 import {
-  section,
+  featuredContainer,
   subtitle,
-  artists,
+  books,
+  Homecontainer,
+  text,
+  homePicture,
+  title,
 } from "../page.module.css"
 
 const IndexPage = ({
@@ -18,33 +22,37 @@ const IndexPage = ({
   const image = getImage(homeFields.picture.localFile)
   return (
     <Layout>
-      <section>
-       <article>
-        <h1>{homeFields.title}</h1>
+      <section className={Homecontainer}>
+      <div>
+          <GatsbyImage
+            className={homePicture}
+            image={image}
+            alt={homeFields.picture.altText}
+          />
+        </div> 
+       <article className={text}>
+       
+        <h1 className={title}>{homeFields.title}</h1>
         <div
             dangerouslySetInnerHTML={{
               __html: homeFields.description,
             }}
           />
-       </article> 
-       <div>
-          <GatsbyImage
-            image={image}
-            alt={homeFields.picture.altText}
-          />
-        </div> 
+      </article> 
+        
+       
       </section>
-      <section className={section}>
+      <section className={featuredContainer}>
       <h2 className={subtitle}>Featured Books</h2>
       <p>
       You might remember reading popular Fairy tales titles like Snow White and the Seven Dwarfs, or Repaunzel when you were a child, they all have been passed down for generations. Buy a new edition with luxury illustrations to brighten up your child’s bookshelf.
       </p>
-      <div className={artists}>
+      <div className={books}>
         {homeFields.featuredBooks.map(book => {
           return <Book slug={`books/${book.slug}`} key={book.id} book={book} />
         })}
       </div>
-  </section>
+      </section>
     </Layout>
   )
 }

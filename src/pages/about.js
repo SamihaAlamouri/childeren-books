@@ -1,12 +1,57 @@
 import * as React from 'react'
 import Layout from '../components/layout'
+import { graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import {
+  Homecontainer,
+  text,
+  title,
+  aboutPicture
+} from "../page.module.css"
 
-const AboutPage = () => {
+const AboutPage = ({
+  data: {
+    wpPage: {
+      aboutFields,
+    },
+  },
+}) => {
+  const image = getImage(aboutFields.picture.localFile)
   return (
-    <Layout pageTitle="About Us">
-      <p>Artist Agency was founded in 1977 by founder, John Doe. AA continues to be at the forefront of art by establishing the careers of our talents on a holistic level -- and setting trends within the industry. </p>
+    <Layout>
+      <section className={Homecontainer}>
+        <GatsbyImage 
+          className={aboutPicture}
+          image={image}
+          alt={aboutFields.picture.altText} 
+        />
+        <article className={text}>
+          <h2 className={title}>{aboutFields.title}</h2>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: aboutFields.description,
+            }}
+          />
+        </article>
+      </section>
     </Layout>
   )
 }
-
+export const query = graphql`
+  query {
+    wpPage(slug: {eq: "about"}) {
+      aboutFields {
+        title
+        description
+        picture {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: DOMINANT_COLOR)
+            }
+          }
+        }
+      }
+    }
+}
+`
 export default AboutPage
